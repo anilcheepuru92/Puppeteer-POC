@@ -1,0 +1,298 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-01-11T10:14:30.557Z",
+    "end": "2021-01-11T10:14:51.261Z",
+    "duration": 20704,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5f9f3720-1c03-49d9-9afa-f53fb96579c8",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "150f256d-51f6-4d80-bc06-a47cbc00b687",
+          "title": "Buy a product functionality",
+          "fullFile": "P:\\PUPPETEER-POC\\dist\\tests\\buy-product-test.js",
+          "file": "\\dist\\tests\\buy-product-test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Buy a product functionality\"",
+              "fullTitle": "Buy a product functionality \"before all\" hook in \"Buy a product functionality\"",
+              "timedOut": false,
+              "duration": 651,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "page = await _builder2.default.build(false);\nloginPage = new LoginPage();\nproductHomePage = new ProductHomePage();\ncartPage = new CartPage();",
+              "err": {},
+              "uuid": "ed7db51e-ae2c-4a28-95a0-6eb02aa98a52",
+              "parentUUID": "150f256d-51f6-4d80-bc06-a47cbc00b687",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"Buy a product functionality\"",
+              "fullTitle": "Buy a product functionality \"after all\" hook in \"Buy a product functionality\"",
+              "timedOut": false,
+              "duration": 2000,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "console.log(\"In after block\");\nawait page.close();",
+              "err": {},
+              "uuid": "08dfcdc9-9c8a-4766-b05a-531fee3ff372",
+              "parentUUID": "150f256d-51f6-4d80-bc06-a47cbc00b687",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Verify Valid Login",
+              "fullTitle": "Buy a product functionality Verify Valid Login",
+              "timedOut": false,
+              "duration": 5446,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await loginPage.fillLoginForm(page, _inputData.url, _inputData.username, _inputData.password);\nawait productHomePage.verifyValidLogin(page);",
+              "err": {},
+              "uuid": "8b40d311-aa39-485c-aec4-419ee777d4db",
+              "parentUUID": "150f256d-51f6-4d80-bc06-a47cbc00b687",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify the number of products after login",
+              "fullTitle": "Buy a product functionality Verify the number of products after login",
+              "timedOut": false,
+              "duration": 19,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var prodSize = await productHomePage.verifyProductsCount(page);\n(0, _chai.expect)(prodSize, \"Number of products does not match\").equals(_inputData.itemCount);\nconsole.log(\"The total products are: \" + prodSize);",
+              "err": {},
+              "uuid": "0566b1ea-ac8a-48de-9060-adc54875cabc",
+              "parentUUID": "150f256d-51f6-4d80-bc06-a47cbc00b687",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add product to cart and open the cart",
+              "fullTitle": "Buy a product functionality Add product to cart and open the cart",
+              "timedOut": false,
+              "duration": 4096,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await productHomePage.addProductToCart(page);\nawait productHomePage.openCart(page);",
+              "err": {},
+              "uuid": "8bc9c0c6-a4c5-4a27-91e9-1197637019ee",
+              "parentUUID": "150f256d-51f6-4d80-bc06-a47cbc00b687",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify added Product and Price",
+              "fullTitle": "Buy a product functionality Verify added Product and Price",
+              "timedOut": false,
+              "duration": 38,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, _chai.expect)((await cartPage.verifyProductName(page)), \"Product Name does not match\").equals((await productHomePage.getProductName(page)));\nawait cartPage.verifyProductPrice(page);",
+              "err": {},
+              "uuid": "a14c7b96-dce1-4241-b93e-258b070fbb90",
+              "parentUUID": "150f256d-51f6-4d80-bc06-a47cbc00b687",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8b40d311-aa39-485c-aec4-419ee777d4db",
+            "0566b1ea-ac8a-48de-9060-adc54875cabc",
+            "8bc9c0c6-a4c5-4a27-91e9-1197637019ee",
+            "a14c7b96-dce1-4241-b93e-258b070fbb90"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9599,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 30000
+        },
+        {
+          "uuid": "ffdb4ee2-c551-431d-a564-8ab9673f60e6",
+          "title": "Login functionality",
+          "fullFile": "P:\\PUPPETEER-POC\\dist\\tests\\login-test.js",
+          "file": "\\dist\\tests\\login-test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Login functionality\"",
+              "fullTitle": "Login functionality \"before all\" hook in \"Login functionality\"",
+              "timedOut": false,
+              "duration": 538,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "page = await _builder2.default.build(false);\nloginPage = new LoginPage();\nproductHomePage = new ProductHomePage();",
+              "err": {},
+              "uuid": "4762d511-ca70-4e64-98fa-47a4d202a805",
+              "parentUUID": "ffdb4ee2-c551-431d-a564-8ab9673f60e6",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"Login functionality\"",
+              "fullTitle": "Login functionality \"after all\" hook in \"Login functionality\"",
+              "timedOut": false,
+              "duration": 205,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "console.log(\"In after block\");\nawait page.close();",
+              "err": {},
+              "uuid": "344e03b2-f843-43bb-8324-9a62454537f9",
+              "parentUUID": "ffdb4ee2-c551-431d-a564-8ab9673f60e6",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Verify Invalid Login",
+              "fullTitle": "Login functionality Verify Invalid Login",
+              "timedOut": false,
+              "duration": 5346,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await loginPage.fillLoginForm(page, _inputData.url, \"invaliduser\", \"invalidpwd\");\nawait loginPage.verifyInvalidLogin(page, _inputData.invalidLoginTxt);",
+              "err": {},
+              "uuid": "aa42b2ca-b233-4069-9927-2a6328a5b0ca",
+              "parentUUID": "ffdb4ee2-c551-431d-a564-8ab9673f60e6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Valid Login",
+              "fullTitle": "Login functionality Verify Valid Login",
+              "timedOut": false,
+              "duration": 2349,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await loginPage.fillLoginForm(page, _inputData.url, _inputData.username, _inputData.password);\nawait productHomePage.verifyValidLogin(page);",
+              "err": {},
+              "uuid": "622782a4-8e40-40ed-8063-9a21a0eca2ba",
+              "parentUUID": "ffdb4ee2-c551-431d-a564-8ab9673f60e6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "aa42b2ca-b233-4069-9927-2a6328a5b0ca",
+            "622782a4-8e40-40ed-8063-9a21a0eca2ba"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7695,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 30000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 30000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.2.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "firstReport_Mon  11 Jan 2021 10 14 29 GMT",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "./MochaReports_Mon  11 Jan 2021 10 14 29 GMT",
+        "reportFilename": "firstReport_Mon  11 Jan 2021 10 14 29 GMT",
+        "overwrite": "true",
+        "reportTitle": "My Custom Report Title",
+        "showPassed": "true",
+        "charts": "true"
+      },
+      "version": "5.1.0"
+    }
+  }
+}
