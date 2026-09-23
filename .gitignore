@@ -1,0 +1,52 @@
+# Dependencies
+
+node_modules/
+
+# Environment / secrets
+
+.env
+.env.*
+!.env.example
+
+# Test reports
+
+MochaReports_*/
+mochawesome-report/
+
+# Generated / compiled files
+
+dist/
+
+# Logs
+
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage
+
+coverage/
+.nyc_output/
+
+# OS files
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / editor files
+
+.vscode/
+.idea/
+*.iml
+
+# Temporary files
+
+*.tmp
+*.temp
+
+# Puppeteer / browser cache
+
+.puppeteerrc
+EOF
