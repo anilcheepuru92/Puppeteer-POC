@@ -60,12 +60,6 @@ npm install --save-dev mocha @babel/core @babel/register @babel/preset-env
 
 Test inputs are centralized in [`src/data/input-data.js`](src/data/input-data.js):
 
-- URL: `https://www.saucedemo.com/index.html`
-- Username: `standard_user`
-- Password: `secret_sauce`
-- Expected product count: `6`
-- Expected first product price: `29.99`
-
 For real projects, keep credentials and environment-specific values outside source control and load them from environment variables or a secrets manager.
 
 ## Running the tests
@@ -117,7 +111,3 @@ This structure keeps test cases focused on behavior and makes selectors and brow
 - The tests depend on the current Sauce Demo UI and test data. Changes to that application may require selector or expectation updates.
 - Puppeteer downloads a compatible browser during installation in standard setups.
 - `dist/` contains the generated/distributed JavaScript counterpart of the `src/` tree; make source changes in `src/` first.
-
-## License
-
-No license has been specified for this repository.
